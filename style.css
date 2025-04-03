@@ -1,0 +1,383 @@
+:root {
+    font-size: 10px; 
+    --main-color: #d3ad7f;
+    --black: #131313;
+    --bg: #010103;
+    --border: 0.1rem solid rgba(255, 255, 255, 0.3);
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: "Roboto", sans-serif;
+}
+
+.caixa-video {
+    position: fixed;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+}
+
+.caixa-video video {
+    min-height: 100%;
+    min-width: 100%;
+    position: fixed;
+    top: 0;
+}
+
+.mascara {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    background: linear-gradient(109deg, rgba(10, 12, 16, 0.99) 15%, rgba(10, 12, 16, 0.7) 50%, rgba(10, 12, 16, 0.99)85%);
+}
+
+section {
+    padding: 3rem 2rem;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    background-color: var(--bg);
+    border-bottom: var(--border);
+    width: 100vw;
+}
+
+.header section {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 50px;
+    padding: 1.5rem 0;
+    position: relative;
+}
+
+.header section a img {
+    height: 6rem;
+}
+
+.header section nav a {
+    margin: 0 1rem;
+    font-size: 1.8rem;
+    color: #fff;
+    transition: 0.4s linear;
+}
+
+.header section nav a:hover {
+    color: var --main-color;
+    border-bottom: 0.1rem solid var(--main-color);
+    padding-bottom: 0.5rem;
+
+}
+
+.caixa-principal {
+    min-width: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 13rem;
+}
+
+.caixa-principal div {
+    max-width: 60rem;
+}
+
+.caixa-principal div h3 {
+    color: #fff;
+    font-size: 6rem;
+    text-transform: uppercase;
+}
+
+.caixa-principal div p {
+    font-size: 2rem;
+    color: #fff;
+    font-weight: lighter;
+    padding: 1rem 0;
+    line-height: 1.8;
+
+}
+
+.botao-link{
+    background-color: var(--main-color);
+    cursor: pointer;
+    margin-top: 2rem;
+    display: inline-block;
+    font-size: 1.7rem;
+    padding: 1rem 3rem;
+    color: #fff;
+    border: none;
+    transition: 0.3s linear;
+}
+
+.caixa-principal div a:hover {
+    letter-spacing: 0.1rem;
+}
+
+.titulo {
+    text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+    padding-bottom: 3.5rem;
+    font-size: 4rem;
+}
+
+.titulo span {
+    color: var(--main-color);
+}
+
+.caixa-sobre .sobre-container {
+    display: flex;
+    align-items: center;
+    background-color: var(--black);
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.caixa-sobre .sobre-container .sobre-imagem {
+    flex:  1 1 45rem;
+    
+}
+
+.caixa-sobre .sobre-container .sobre-imagem  img {
+    width: 100%;
+}
+
+.caixa-sobre .sobre-container .sobre-texto {
+    flex: 1 1 45rem;
+    padding: 2rem;
+}
+
+.caixa-sobre .sobre-container .sobre-texto h3 {
+    font-size: 3rem;
+    color: #fff;
+}
+
+.caixa-sobre .sobre-container .sobre-texto p {
+    font-size: 1.5rem;
+    font-weight: lighter;
+    color: #fff;
+    line-height: 1.8;
+    padding: 1rem 0;
+}
+
+.modal {
+    opacity: 0;
+    visibility: hidden;
+    flex-direction: column;
+    background-color: transparent;
+    gap: 20px;
+    z-index: 4;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+.mascara-modal {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 3;
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(109deg, rgba(10, 12, 16, 0.99) 15%, rgba(10, 12, 16, 0.7) 50%, rgba(10, 12, 16, 0.99)85%);
+
+}
+.menu-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.item {
+    border: 3px solid var(--main-color);
+    padding: 50px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.item img {
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+}
+
+.item h3 {
+    font-size: 1.5em;
+    color: var(--main-color);
+    margin: 10px 0;
+}
+.item p {
+    font-size: 2em;
+    color: var(--main-color);
+    font-weight: bold;
+}
+
+.item button {
+    background-color: #5a3e2b;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin-top: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 2em;
+}
+
+.item button:hover {
+    background-color: #3e2b1f;
+}
+
+.carrinho {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid var(--main-color);
+    text-align: center;
+    border-radius: 10px;
+}
+
+.carrinho h2 {
+    font-size: 2em;
+    color: var(--main-color);
+    margin-bottom: 10px;
+}
+
+.carrinho p {
+    font-size: 1.5em;
+    color: var(--main-color);
+    font-weight: bold;
+}
+
+.carrinho ul {
+    list-style: none;
+    padding: 0;
+    color: #fff;
+}
+
+.carrinho button {
+    background-color: #350807;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin-top: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1em;
+}
+.carrinho button:hover {
+    background-color: #c9302c;
+}
+
+
+@media (max-width: 1024px) {
+    .menu-container {
+        flex-wrap: wrap; 
+        justify-content: center;
+    }
+
+    .item {
+        width: 45%; 
+        padding: 30px;
+    }
+
+    .modal {
+        width: 80%;
+    }
+}
+
+
+@media (max-width: 768px) {
+    :root {
+        font-size: 8px; 
+    }
+
+    .header section {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .header section nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .header section nav a {
+        font-size: 1.6rem; 
+    }
+
+    .caixa-principal div h3 {
+        font-size: 4rem;
+    }
+
+    .caixa-principal div p {
+        font-size: 1.8rem;
+    }
+
+    .menu-container {
+        flex-direction: column;
+    }
+
+    .item {
+        width: 90%; 
+    }
+
+    .modal {
+        width: 90%;
+        left: 50%;
+        top: 55%;
+        transform: translate(-50%, -50%);
+    }
+
+    .modal iframe {
+        width: 100%;
+        height: 250px;
+    }
+}
+@media (max-width: 480px) {
+    .header section a img {
+        height: 4rem; 
+    }
+
+    .header section nav a {
+        font-size: 1.4rem;
+        margin: 0.5rem;
+    }
+
+    .titulo {
+        font-size: 3rem;
+    }
+
+    .caixa-principal div h3 {
+        font-size: 3rem;
+    }
+
+    .caixa-principal div p {
+        font-size: 1.5rem;
+    }
+
+    .item {
+        padding: 20px;
+    }
+
+    .modal {
+        top: 60%;
+    }
+}
+
+
